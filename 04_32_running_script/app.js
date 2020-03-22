@@ -43,3 +43,36 @@ if (mystery) {
 } else {
   console.log("Falsy");
 }
+
+// logical AND
+if (password.length >= 6 && password.indexOf(" ") === -1) {
+  console.log("Valid password");
+} else {
+  console.log("Invalid password");
+}
+
+// logical OR
+let age = 100;
+if (age < 6 || age > 65) {
+  console.log("FREE");
+} else {
+  console.log("PAY");
+}
+
+// Switch
+
+let day = 2;
+
+switch (day) {
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  default:
+    console.log("Invalid day");
+}
