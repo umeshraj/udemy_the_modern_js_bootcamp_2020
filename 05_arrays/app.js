@@ -11,3 +11,10 @@ console.log(shoppingList);
 // remove last
 console.log(shoppingList.pop());
 console.log(shoppingList);
+
+// add to start : unshift
+shoppingList.unshift("dishes");
+console.log(shoppingList);
+
+// remove from start: shift
+console.log(shoppingList.shift());
