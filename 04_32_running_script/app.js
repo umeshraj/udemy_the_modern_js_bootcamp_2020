@@ -7,11 +7,13 @@ if (1 === 1) {
 }
 
 // Example 2
-let rating = 3;
+let rating = 1;
 if (rating === 3) {
   console.log("You are a superstar");
 } else if (rating == 2) {
   console.log("You are ok");
+} else {
+  console.log("Invalid rating");
 }
 
 // Example 3
