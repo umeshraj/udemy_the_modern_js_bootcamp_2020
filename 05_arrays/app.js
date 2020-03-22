@@ -18,3 +18,13 @@ console.log(shoppingList);
 
 // remove from start: shift
 console.log(shoppingList.shift());
+
+// concat
+let array1 = ["a", "b", "c"];
+let array2 = [1, 2, 3];
+let array3 = array1.concat(array2);
+console.log(array3);
+
+// multiple concat
+let array4 = [].concat(array1, array2);
+console.log(array4);
