@@ -35,3 +35,11 @@ if (password.length >= 6) {
 } else {
   console.log("Passworld should be longer than 6");
 }
+
+// truthy
+let mystery = 5;
+if (mystery) {
+  console.log("Truthy");
+} else {
+  console.log("Falsy");
+}
