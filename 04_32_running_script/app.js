@@ -76,3 +76,7 @@ switch (day) {
   default:
     console.log("Invalid day");
 }
+
+// Ternary
+let newNum = 7;
+newNum == 7 ? console.log("Luck") : console.log("Not lucky");
