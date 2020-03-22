@@ -22,3 +22,16 @@ let num = 37;
 if (num % 2 !== 0) {
   console.log("It's odd");
 }
+
+// nested conditionals
+let password = "asdf afdsa";
+
+if (password.length >= 6) {
+  if (password.indexOf(" ") === -1) {
+    console.log("Valid password");
+  } else {
+    console.log("Password is long, but no spaces allowed");
+  }
+} else {
+  console.log("Passworld should be longer than 6");
+}
