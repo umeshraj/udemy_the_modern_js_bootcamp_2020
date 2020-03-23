@@ -28,3 +28,9 @@ console.log(array3);
 // multiple concat
 let array4 = [].concat(array1, array2);
 console.log(array4);
+
+// includes
+let ingredients = ["sugar", "salt", "pepper"];
+console.log(array1.includes("sugar"));
+
+console.log(ingredients.indexOf("salt"));
