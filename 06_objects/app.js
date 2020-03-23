@@ -14,3 +14,8 @@ console.log(fitbitData[45]);
 // access with []
 console.log(fitbitData["76 game"]);
 console.log(fitbitData["red"]);
+
+// adding properties
+fitbitData["umesh"] = 4.0;
+fitbitData.colt = 5.0;
+console.log(fitbitData);
