@@ -54,3 +54,12 @@ console.log(ingredients);
 
 ingredients.splice(1, 0, "butter", "ghee");
 console.log(ingredients);
+
+// sorting
+let people = ["mary", "joe", "vince", "abby"];
+people.sort();
+console.log(people);
+
+let nums = [34, 10, 105, 78];
+nums.sort();
+console.log(nums);
