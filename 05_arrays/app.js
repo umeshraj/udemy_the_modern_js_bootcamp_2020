@@ -33,4 +33,11 @@ console.log(array4);
 let ingredients = ["sugar", "salt", "pepper"];
 console.log(array1.includes("sugar"));
 
+// indexof
 console.log(ingredients.indexOf("salt"));
+
+// reverse
+console.log(ingredients.reverse());
+
+//joing
+console.log(ingredients.join("_"));
