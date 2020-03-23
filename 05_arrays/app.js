@@ -68,3 +68,10 @@ console.log(nums);
 const foods = ["milk"];
 foods.push("chocolate");
 console.log(foods);
+
+// nested arrays
+const nestArray = [
+  ["dog", "brown"],
+  ["cat", "yellow"]
+];
+console.log(nestArray[0]);
