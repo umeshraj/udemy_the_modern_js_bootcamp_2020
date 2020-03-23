@@ -39,5 +39,8 @@ console.log(ingredients.indexOf("salt"));
 // reverse
 console.log(ingredients.reverse());
 
-//joing
+//join
 console.log(ingredients.join("_"));
+
+// slice
+console.log(ingredients.slice(0, 2));
