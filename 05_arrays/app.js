@@ -44,3 +44,13 @@ console.log(ingredients.join("_"));
 
 // slice
 console.log(ingredients.slice(0, 2));
+
+// splice
+ingredients.splice(1, 0, "biscuit");
+console.log(ingredients);
+
+ingredients.splice(1, 1);
+console.log(ingredients);
+
+ingredients.splice(1, 0, "butter", "ghee");
+console.log(ingredients);
