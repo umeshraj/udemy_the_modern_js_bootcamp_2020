@@ -63,3 +63,8 @@ console.log(people);
 let nums = [34, 10, 105, 78];
 nums.sort();
 console.log(nums);
+
+// const
+const foods = ["milk"];
+foods.push("chocolate");
+console.log(foods);
