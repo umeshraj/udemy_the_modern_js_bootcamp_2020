@@ -13,3 +13,10 @@ const scores = [30, 2, 132, 12, 102];
 for (let idx = 0; idx < scores.length; idx++) {
   console.log(`${idx}: ${scores[idx]}`);
 }
+
+// nested loops
+for (let i = 1; i <= 5; i++) {
+  for (let j = 3; j >= 0; j--) {
+    console.log(`(${i}, ${j})`);
+  }
+}
