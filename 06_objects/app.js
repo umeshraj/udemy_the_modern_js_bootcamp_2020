@@ -19,3 +19,24 @@ console.log(fitbitData["red"]);
 fitbitData["umesh"] = 4.0;
 fitbitData.colt = 5.0;
 console.log(fitbitData);
+
+// nested
+const student = {
+  name: "umesh",
+  exam: {
+    midterm: 10,
+    final: 25
+  }
+};
+
+let score = student.exam.midterm + student.exam.final;
+console.log(score);
+
+// object comparison
+let nums = [1, 2, 3];
+let nums2 = [1, 2, 3];
+console.log(nums === nums2);
+
+// empty comparison
+nums = [];
+console.log(nums === []);
