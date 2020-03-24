@@ -28,3 +28,13 @@ while (j <= 5) {
   console.log(j);
   j++;
 }
+
+// guessing game
+console.log("Guessing game");
+const target = Math.floor(Math.random() * 10);
+let guess = Math.floor(Math.random() * 10);
+while (guess !== target) {
+  guess = Math.floor(Math.random() * 10);
+  console.log(target, guess);
+}
+console.log("Success!!");
