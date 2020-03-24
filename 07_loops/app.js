@@ -38,3 +38,12 @@ while (guess !== target) {
   console.log(target, guess);
 }
 console.log("Success!!");
+
+// Break
+
+// for of
+console.log("For...of");
+let test = ["aa", "asf", "as", "swer"];
+for (let ur of test) {
+  console.log(ur);
+}
