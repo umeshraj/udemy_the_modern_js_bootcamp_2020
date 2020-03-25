@@ -47,3 +47,24 @@ let test = ["aa", "asf", "as", "swer"];
 for (let ur of test) {
   console.log(ur);
 }
+
+// for of with object
+const movies = {
+  a: 10,
+  b: 15,
+  c: 12
+};
+
+// // this will not work
+// for (let x of movies) {
+//   console.log(x);
+// }
+
+// alternatively for..of with objects
+for (let m of Object.keys(movies)) {
+  console.log(m);
+}
+
+for (let r of Object.values(movies)) {
+  console.log(r);
+}
