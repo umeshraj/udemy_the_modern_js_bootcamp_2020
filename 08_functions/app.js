@@ -39,3 +39,19 @@ function avg(numbers) {
   return total / numbers.length;
 }
 console.log(avg([1, 2, 3, 4]));
+
+// challenge 3: pangram
+function isPangram(input) {
+  input = input.toLowerCase();
+  const alphabet = "abcdedfghijklmnopqrstuvwxyz";
+  for (letter of alphabet) {
+    if (input.indexOf(letter) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+const pangram1 = "Sphinx of black quartz, judge my vow.";
+console.log(isPangram(pangram1));
+console.log(isPangram("Hello, world!"));
