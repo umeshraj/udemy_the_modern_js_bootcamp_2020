@@ -55,3 +55,40 @@ function isPangram(input) {
 const pangram1 = "Sphinx of black quartz, judge my vow.";
 console.log(isPangram(pangram1));
 console.log(isPangram("Hello, world!"));
+
+// challenge 4: get card
+console.log("Get card");
+
+function pickRandFromArray(arr) {
+  const idx = Math.floor(Math.random() * arr.length);
+  return arr[idx];
+}
+
+function getCard() {
+  const numbers = [
+    "A",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K"
+  ];
+  const suites = ["clubs", "spades", "hearts", "diamonds"];
+
+  return {
+    value: pickRandFromArray(numbers),
+    suit: pickRandFromArray(suites)
+  };
+}
+
+for (let i = 0; i < 10; i++) {
+  console.log(getCard());
+}
