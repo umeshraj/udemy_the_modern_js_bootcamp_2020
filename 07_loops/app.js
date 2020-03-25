@@ -68,3 +68,9 @@ for (let m of Object.keys(movies)) {
 for (let r of Object.values(movies)) {
   console.log(r);
 }
+
+// For..in
+console.log("For..in with movies");
+for (let m in movies) {
+  console.log(m);
+}
