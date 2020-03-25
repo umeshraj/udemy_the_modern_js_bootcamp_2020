@@ -29,3 +29,13 @@ function isValidPassword(password, username) {
 console.log(isValidPassword("safdsfdafa", "umesh"));
 console.log(isValidPassword(" s asssafasdff", "um"));
 console.log(isValidPassword("asdfdafdfafasfafsa", "asdf"));
+
+// Challenge 2: average
+function avg(numbers) {
+  let total = 0;
+  for (num of numbers) {
+    total += num;
+  }
+  return total / numbers.length;
+}
+console.log(avg([1, 2, 3, 4]));
