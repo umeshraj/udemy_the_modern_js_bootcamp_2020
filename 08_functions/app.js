@@ -3,10 +3,10 @@ function rollDie() {
   return roll;
 }
 
-function throwDice() {
-  for (let i = 0; i < 10; i++) {
+function throwDice(numRolls) {
+  for (let i = 0; i < numRolls; i++) {
     console.log(rollDie());
   }
 }
 
-throwDice();
+throwDice(2);
