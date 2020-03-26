@@ -66,3 +66,29 @@ function cry() {
 }
 
 console.log(callThrice(cry));
+
+// return a function
+function multiplyBy(num) {
+  return function(x) {
+    return x * num;
+  };
+}
+
+const triple = multiplyBy(3);
+const double = multiplyBy(2);
+
+console.log(triple(6));
+console.log(double(12));
+
+// another factor
+function makeBetweenFunc(min, max) {
+  return function(x) {
+    return x >= min && x <= max;
+  };
+}
+const isChild = makeBetweenFunc(0, 18);
+console.log(isChild(10));
+
+const isNineties = makeBetweenFunc(1990, 1999);
+
+const isNiceWeather = makeBetweenFunc(60, 90);
