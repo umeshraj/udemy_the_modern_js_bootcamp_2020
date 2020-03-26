@@ -52,3 +52,17 @@ const thing = {
   doSomething: multiply
 };
 console.log(thing.doSomething(50, 2));
+
+// Higher order functions w/ input
+
+function callThrice(f) {
+  f();
+  f();
+  f();
+}
+
+function cry() {
+  console.log("Boo hoo..");
+}
+
+console.log(callThrice(cry));
