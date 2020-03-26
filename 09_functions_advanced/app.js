@@ -92,3 +92,18 @@ console.log(isChild(10));
 const isNineties = makeBetweenFunc(1990, 1999);
 
 const isNiceWeather = makeBetweenFunc(60, 90);
+
+// call back
+function grumpus() {
+  alert("Gahh! Go away!");
+}
+// // setTimeout(grumpus, 5000);
+// setTimeout(function() {
+//   alert("Welcome");
+// }, 3000);
+
+const btn = document.querySelector("button");
+// btn.addEventListener("click", grumpus);
+btn.addEventListener("click", function() {
+  alert("Why did you click me");
+});
