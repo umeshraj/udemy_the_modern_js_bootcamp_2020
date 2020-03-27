@@ -1,4 +1,4 @@
-const numbers = [10, 12, 45, 65];
+const numbers = [10, 11, 1, 65, 12, 45, 65];
 
 function triple(num) {
   console.log(num * 3);
@@ -52,3 +52,21 @@ console.log(parity);
 let movies = ["as", "safsaf", "fdds", "dswer"];
 const movie = movies.find(m => m.includes("sa"));
 console.log(movie);
+
+// FILTER
+const evenNumbers = numbers.filter(x => x % 2 === 0);
+console.log(evenNumbers);
+
+const oddNumbers = numbers.filter(function(x) {
+  return x % 2 === 1;
+});
+
+// EVERY
+console.log("SOME & EVERY");
+const words = ["dog", "dig", "cat"];
+const allThreeLetters = words.every(word => word.length == 3);
+console.log(allThreeLetters);
+
+// SOME
+const someDStart = words.some(word => word[0] === "d");
+console.log(someDStart);
