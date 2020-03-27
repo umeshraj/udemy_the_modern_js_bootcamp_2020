@@ -17,3 +17,11 @@ console.log("For each w/ index");
 numbers.forEach(function(num, idx) {
   console.log(`${idx}: ${num}`);
 });
+
+// MAP
+
+console.log("Double w/ map");
+const doubles = numbers.map(function(n) {
+  return 2 * n;
+});
+console.log(doubles);
