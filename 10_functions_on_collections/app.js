@@ -70,3 +70,7 @@ console.log(allThreeLetters);
 // SOME
 const someDStart = words.some(word => word[0] === "d");
 console.log(someDStart);
+
+// SORT
+console.log("SORT");
+console.log(numbers.sort((a, b) => a - b));
