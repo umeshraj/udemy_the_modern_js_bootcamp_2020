@@ -25,3 +25,8 @@ const doubles = numbers.map(function(n) {
   return 2 * n;
 });
 console.log(doubles);
+
+// ARROW functions
+const isEven = x => {
+  return x % 2 === 0;
+};
