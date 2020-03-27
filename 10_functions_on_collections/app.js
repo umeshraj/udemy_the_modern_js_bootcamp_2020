@@ -47,3 +47,8 @@ console.log("Parity list");
 const parity = numbers.map(n => (n % 2 === 0 ? "even" : "odd"));
 console.log(numbers);
 console.log(parity);
+
+// FIND
+let movies = ["as", "safsaf", "fdds", "dswer"];
+const movie = movies.find(m => m.includes("sa"));
+console.log(movie);
