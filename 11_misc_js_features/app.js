@@ -14,3 +14,15 @@ const colors = ["red", "green"];
 const animals = ["dog", "cat", "pig"];
 const combo = [...colors, ...animals];
 console.log(combo);
+
+// Spread in objects
+const canine = {
+  family: "Canine",
+  furry: true
+};
+
+const dog = {
+  ...canine,
+  pet: true
+};
+console.log(dog);
