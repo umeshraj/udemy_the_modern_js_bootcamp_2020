@@ -95,3 +95,16 @@ const mySum = numbers.reduce((sum, currentVal) => {
   return sum + currentVal;
 }, 100);
 console.log(mySum);
+
+// reduce to tallying votes
+const votes = ["y", "y", "n", "n", "n"];
+
+const results = votes.reduce((tally, val) => {
+  if (tally[val]) {
+    tally[val]++;
+  } else {
+    tally[val] = 1;
+  }
+  return tally;
+}, {});
+const results = console.log(results);
