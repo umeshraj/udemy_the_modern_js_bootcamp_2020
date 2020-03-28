@@ -74,3 +74,24 @@ console.log(someDStart);
 // SORT
 console.log("SORT");
 console.log(numbers.sort((a, b) => a - b));
+
+// REDUCE
+console.log("REDUCE");
+const total = numbers.reduce((total, currentVal) => {
+  return total + currentVal;
+});
+console.log(total);
+
+// use reduce to get max value
+const maxVal = numbers.reduce((maxVal, currentVal) => {
+  // return maxVal > currentVal ? maxVal : currentVal;
+  return Math.max(maxVal, currentVal);
+});
+console.log(numbers);
+console.log(`Max value: ${maxVal}`);
+
+// initial value
+const mySum = numbers.reduce((sum, currentVal) => {
+  return sum + currentVal;
+}, 100);
+console.log(mySum);
