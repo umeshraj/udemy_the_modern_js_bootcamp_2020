@@ -26,3 +26,14 @@ const dog = {
   pet: true
 };
 console.log(dog);
+
+// REST operator
+function sumAllArgs() {
+  console.log(arguments);
+  const argsArray = [...arguments];
+  const total = argsArray.reduce((total, currentVal) => {
+    return total + currentVal;
+  });
+  return total;
+}
+console.log(sumAllArgs(1, 2, 3));
