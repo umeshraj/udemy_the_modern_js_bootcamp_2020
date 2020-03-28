@@ -100,11 +100,12 @@ console.log(mySum);
 const votes = ["y", "y", "n", "n", "n"];
 
 const results = votes.reduce((tally, val) => {
-  if (tally[val]) {
-    tally[val]++;
-  } else {
-    tally[val] = 1;
-  }
+  // if (tally[val]) {
+  //   tally[val]++;
+  // } else {
+  //   tally[val] = 1;
+  // }
+  tally[val] = (tally[val] || 0) + 1;
   return tally;
 }, {});
 const results = console.log(results);
