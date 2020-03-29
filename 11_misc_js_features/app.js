@@ -60,3 +60,18 @@ console.log(fourth);
 
 const [winner, ...others] = raceResults;
 console.log(others);
+
+// Destructing objects
+const runner = {
+  name: "umesh",
+  country: "india",
+  age: 32
+};
+const { name, age } = runner;
+console.log(name, age);
+
+const { name: firstName } = runner;
+console.log(firstName);
+
+const { newName, newOthers } = runner;
+console.log(newOthers);
