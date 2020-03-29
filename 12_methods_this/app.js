@@ -39,3 +39,15 @@ const myMath = {
     return x * y;
   }
 };
+
+// shortcut for methods
+
+const auth = {
+  userName: "umesh",
+  login() {
+    console.log("You are logged in");
+  },
+  logout() {
+    console.log("GoodBye!");
+  }
+};
