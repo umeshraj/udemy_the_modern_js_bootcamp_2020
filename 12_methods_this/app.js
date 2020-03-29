@@ -51,3 +51,10 @@ const auth = {
     console.log("GoodBye!");
   }
 };
+
+// THIS!!
+function sayHi() {
+  console.log("Hi");
+  console.log(this);
+}
+sayHi();
