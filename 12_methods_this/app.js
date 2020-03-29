@@ -27,3 +27,15 @@ function addProperty(obj, key, val) {
 }
 const team3 = addProperty(team, "director", "Mani");
 console.log(team3);
+
+// METHODS
+
+const myMath = {
+  numbers: [1, 2, 3, 4, 5],
+  add: function(x, y) {
+    return x + y;
+  },
+  multiply: function(x, y) {
+    return x * y;
+  }
+};
