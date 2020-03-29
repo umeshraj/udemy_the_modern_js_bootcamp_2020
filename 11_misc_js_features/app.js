@@ -37,3 +37,15 @@ function sumAllArgs() {
   return total;
 }
 console.log(sumAllArgs(1, 2, 3));
+
+function sumRest(...nums) {
+  const total = nums.reduce((total, curVal) => total + curVal);
+  return total;
+}
+console.log(sumRest(1, 2, 3));
+
+// collecting remaining
+function fullName(first, last, ...others) {
+  console.log(`${first}, ${last}, ${others}`);
+}
+fullName("Umes", "Raj", "sfaa", "safda");
