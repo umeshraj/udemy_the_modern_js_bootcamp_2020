@@ -49,3 +49,14 @@ function fullName(first, last, ...others) {
   console.log(`${first}, ${last}, ${others}`);
 }
 fullName("Umes", "Raj", "sfaa", "safda");
+
+// Destructuring arrays
+const raceResults = ["sa", "asf", "ure", "xes"];
+const [gold, silver, bronze] = raceResults;
+console.log(gold);
+
+const [first, , , fourth] = raceResults;
+console.log(fourth);
+
+const [winner, ...others] = raceResults;
+console.log(others);
