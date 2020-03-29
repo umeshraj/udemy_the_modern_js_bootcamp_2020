@@ -84,3 +84,9 @@ const results = [
 
 const [, { country }] = results;
 console.log(country);
+
+// Parameter destructuring
+function printFancy({ name, country }) {
+  console.log(name, country);
+}
+printFancy(results[0]);
