@@ -73,5 +73,14 @@ console.log(name, age);
 const { name: firstName } = runner;
 console.log(firstName);
 
-const { newName, newOthers } = runner;
+const { newName, ...newOthers } = runner;
 console.log(newOthers);
+
+// Nested destructuring
+const results = [
+  { name: "umesh", country: "India" },
+  { name: "afsas", country: "USA" }
+];
+
+const [, { country }] = results;
+console.log(country);
