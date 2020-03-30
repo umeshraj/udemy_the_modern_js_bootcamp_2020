@@ -71,9 +71,22 @@ const person1 = {
     return `${first} ${last} AKA ${nickname}`;
   },
   printBio() {
+    console.log(this);
     const fullname = this.fullName();
     console.log(`${fullname} is a person`);
+  },
+  laugh: () => {
+    console.log(this);
+    console.log(`${this.nickname} says ha ha`);
   }
 };
 
 person1.printBio();
+
+// this: changing invocation context
+const printBio = person1.printBio;
+// printBio();
+
+// arrow functions and this
+console.log("Testing laugh");
+person1.laugh();
