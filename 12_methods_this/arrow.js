@@ -17,11 +17,16 @@ const annoyer = {
   start() {
     console.log(this.pickPhrase);
 
-    setInterval(() => {
+    this.timerId = setInterval(() => {
       //   console.log(this);
-      console.log(this.pickPhrase);
+      console.log(this.pickPhrase());
     }, 3000);
+  },
+  stop() {
+    clearInterval(this.timerId);
+    console.log("Phew! That stopped!");
   }
 };
 
 annoyer.start();
+setTimeout(annoyer.stop, 9000);
