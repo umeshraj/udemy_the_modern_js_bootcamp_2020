@@ -58,3 +58,22 @@ function sayHi() {
   console.log(this);
 }
 sayHi();
+
+// this in objects
+const person1 = {
+  first: "Umesh",
+  last: "Raj",
+  nickname: "anc",
+  fullName() {
+    // console.log(this);
+    // console.log(`${this.first} ${this.last} a.k.a ${this.nickname}`);
+    const { first, last, nickname } = this;
+    return `${first} ${last} AKA ${nickname}`;
+  },
+  printBio() {
+    const fullname = this.fullName();
+    console.log(`${fullname} is a person`);
+  }
+};
+
+person1.printBio();
