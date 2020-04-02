@@ -15,3 +15,9 @@ for (let i = 0; i < allLis.length; i++) {
 for (let li of allLis) {
   li.innerHTML = "We are <b>COOL</b>";
 }
+
+const colors = ["red", "green", "yellow", "orange", "blue", "purple"];
+allLis.forEach((li, i) => {
+  const color = colors[i];
+  li.style.color = color;
+});
