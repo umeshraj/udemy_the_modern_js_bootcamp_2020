@@ -23,3 +23,11 @@
 // });
 
 // TODO list
+const todo = document.querySelector("#todos .todo");
+// todo.style.color = "gray";
+// todo.style.textDecoration = "line-through";
+// todo.style.opacity = "50%";
+
+// todo.setAttribute("class", "done");
+todo.classList.add("done");
+// todo.classList.remove("done");
