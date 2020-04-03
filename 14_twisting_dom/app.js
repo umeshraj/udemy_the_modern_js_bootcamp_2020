@@ -55,3 +55,23 @@ newLink.href = "https://www.youtube.com/watch?v=thZLV6XsrDk";
 
 const firstP = document.querySelector("p");
 firstP.appendChild(newLink);
+
+// insert before
+const parentUl = document.querySelector("ul");
+const newLi = document.createElement("li");
+newLi.innerText = "I AM A NEW LI";
+const firstLi = document.querySelector("li.todo");
+parentUl.insertBefore(newLi, firstLi);
+
+const lastUl = document.querySelectorAll("li.todo")[2];
+parentUl.insertBefore(newLi, lastUl);
+// parentUl.appendChild(newLi);
+
+// insertAdjacentElement
+const newITag = document.createElement("i");
+newITag.innerText = "I am italics";
+// const firstP = document.querySelector("p");
+firstP.insertAdjacentElement("beforebegin", newITag);
+
+// Append
+firstP.append(newITag, newLi);
