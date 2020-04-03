@@ -75,3 +75,12 @@ firstP.insertAdjacentElement("beforebegin", newITag);
 
 // Append
 firstP.append(newITag, newLi);
+
+// Removechild
+const ul = document.querySelector("section ul");
+const removeMe = ul.querySelector(".special");
+ul.removeChild(removeMe);
+
+// remove
+const h1 = document.querySelector("h1");
+h1.remove();
