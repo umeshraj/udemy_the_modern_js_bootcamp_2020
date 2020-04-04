@@ -85,28 +85,13 @@ const warriorsGames = [
   }
 ];
 
-const makeChart = games => {
+const makeChart = (games, targetTeam) => {
   const ulParent = document.createElement("ul");
   for (game of games) {
-    // let awayTeam = game.awayTeam.team;
-    // let homeTeam = game.homeTeam.team;
-    const { homeTeam, awayTeam } = game;
-    const { team: hTeam, points: hPoints } = homeTeam;
-    const { team: aTeam, points: aPoints } = awayTeam;
-    let scoreLine;
-
-    if (aPoints > hPoints) {
-      scoreLine = `<b>${aPoints}</b>-${hPoints}`;
-    } else {
-      scoreLine = `${aPoints}-<b>${hPoints}</b>`;
-    }
-    const warriors = hTeam === "Golden State" ? homeTeam : awayTeam;
-
     const gameLi = document.createElement("li");
-    const teamNames = `${aTeam} @ ${hTeam}`;
-    gameLi.innerHTML = `${teamNames} ${scoreLine}`;
+    gameLi.innerHTML = getScoreLine(game);
 
-    gameLi.classList.add(warriors.isWinner ? "win" : "loss");
+    gameLi.classList.add(isWinner(game, targetTeam) ? "win" : "loss");
 
     // append li to ul
     ulParent.appendChild(gameLi);
@@ -114,6 +99,30 @@ const makeChart = games => {
   return ulParent;
 };
 
+const isWinner = ({ homeTeam, awayTeam }, targetTeam) => {
+  const target = homeTeam.team === targetTeam ? homeTeam : awayTeam;
+  return target.isWinner;
+};
+
+const getScoreLine = ({ homeTeam, awayTeam }) => {
+  let scoreLine;
+  // let awayTeam = game.awayTeam.team;
+  // let homeTeam = game.homeTeam.team;
+  const { team: hTeam, points: hPoints } = homeTeam;
+  const { team: aTeam, points: aPoints } = awayTeam;
+  const teamNames = `${aTeam} @ ${hTeam}`;
+
+  if (aPoints > hPoints) {
+    scoreLine = `<b>${aPoints}</b>-${hPoints}`;
+  } else {
+    scoreLine = `${aPoints}-<b>${hPoints}</b>`;
+  }
+  return `${teamNames} ${scoreLine}`;
+};
+
 // prepend to body so it comes before the script tag
-const chart1 = makeChart(warriorsGames);
-document.body.prepend(chart1);
+// const chart1 = makeChart(warriorsGames, "Golden State");
+// document.body.prepend(chart1);
+
+const chart2 = makeChart(warriorsGames, "Houston");
+document.body.prepend(chart2);
