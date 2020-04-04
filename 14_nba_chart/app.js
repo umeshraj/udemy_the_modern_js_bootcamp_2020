@@ -121,8 +121,10 @@ const getScoreLine = ({ homeTeam, awayTeam }) => {
 };
 
 // prepend to body so it comes before the script tag
-// const chart1 = makeChart(warriorsGames, "Golden State");
-// document.body.prepend(chart1);
+const gsSection = document.querySelector("#gs");
+const gsChart = makeChart(warriorsGames, "Golden State");
+gsSection.appendChild(gsChart);
 
-const chart2 = makeChart(warriorsGames, "Houston");
-document.body.prepend(chart2);
+const hrSection = document.querySelector("#hr");
+const hrChart = makeChart(warriorsGames, "Houston");
+hrSection.appendChild(hrChart);
