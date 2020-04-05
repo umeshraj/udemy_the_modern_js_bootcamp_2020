@@ -59,6 +59,10 @@ const itemsUL = document.querySelector("#items");
 addItemInput.addEventListener("keypress", function (event) {
   console.log(event.key);
   if (event.key === "Enter") {
+    // don't do anythin for empty string
+    if (!this.value) {
+      return;
+    }
     // add to lis
     // const food = addItemInput.value;
     const food = this.value;
