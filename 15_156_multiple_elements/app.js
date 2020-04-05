@@ -35,5 +35,37 @@ for (let color of colors) {
 
 // keyboard event on body
 document.addEventListener("keypress", function (event) {
-  console.log(event);
+  // console.log(event);
+  console.log("KEY PRESS");
+});
+
+// input keypress
+const input = document.querySelector("#username");
+
+// key down
+input.addEventListener("keydown", function (event) {
+  console.log("KEY DOWN!");
+});
+
+// key up
+input.addEventListener("keyup", function (event) {
+  console.log("KEY UP!");
+});
+
+// shopping list
+const addItemInput = document.querySelector("#addItem");
+const itemsUL = document.querySelector("#items");
+
+addItemInput.addEventListener("keypress", function (event) {
+  console.log(event.key);
+  if (event.key === "Enter") {
+    // add to lis
+    // const food = addItemInput.value;
+    const food = this.value;
+    const newLI = document.createElement("li");
+    newLI.innerText = food;
+    itemsUL.appendChild(newLI);
+    // clear input
+    this.value = "";
+  }
 });
