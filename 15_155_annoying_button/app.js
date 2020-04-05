@@ -1,0 +1,13 @@
+const btn = document.querySelector("button");
+btn.addEventListener("mouseover", function () {
+  console.log("Moused over me");
+  const height = Math.floor(Math.random() * window.innerHeight);
+  const width = Math.floor(Math.random() * window.innerWidt);
+  btn.style.left = `${width}px`;
+  btn.style.top = `${height}px`;
+});
+
+btn.addEventListener("click", function () {
+  btn.innerText = "You got me";
+  document.body.style.backgroundColor = "green";
+});
