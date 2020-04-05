@@ -32,3 +32,8 @@ for (let color of colors) {
   // });
   container.appendChild(box);
 }
+
+// keyboard event on body
+document.addEventListener("keypress", function (event) {
+  console.log(event);
+});
