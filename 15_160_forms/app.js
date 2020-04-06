@@ -15,20 +15,26 @@ form.addEventListener("submit", function (e) {
 
 // live change trackers
 const formData = {};
-creditCardInput.addEventListener("input", (e) => {
-  console.log("CC changed");
-  formData["cc"] = e.target.value;
-  console.log(formData);
-});
+for (let input of [creditCardInput, termsCheckbox, veggieSelect]) {
+  input.addEventListener("input", (e) => {
+    // console.dir(e.target.name);
+    formData[e.target.name] = e.target.value;
+  });
+}
+// creditCardInput.addEventListener("input", (e) => {
+//   console.log("CC changed");
+//   formData["cc"] = e.target.value;
+//   console.log(formData);
+// });
 
-veggieSelect.addEventListener("input", (e) => {
-  console.log("Veggie changed");
-  formData["veggie"] = e.target.value;
-  console.log(formData);
-});
+// veggieSelect.addEventListener("input", (e) => {
+//   console.log("Veggie changed");
+//   formData["veggie"] = e.target.value;
+//   console.log(formData);
+// });
 
-termsCheckbox.addEventListener("input", (e) => {
-  console.log("Checkbox changed");
-  formData["terms"] = e.target.checked;
-  console.log(formData);
-});
+// termsCheckbox.addEventListener("input", (e) => {
+//   console.log("Checkbox changed");
+//   formData["terms"] = e.target.checked;
+//   console.log(formData);
+// });
