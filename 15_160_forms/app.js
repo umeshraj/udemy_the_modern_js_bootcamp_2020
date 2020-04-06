@@ -12,3 +12,23 @@ form.addEventListener("submit", function (e) {
   console.log("terms", termsCheckbox.checked);
   console.log("veggieselect", veggieSelect.value);
 });
+
+// live change trackers
+const formData = {};
+creditCardInput.addEventListener("input", (e) => {
+  console.log("CC changed");
+  formData["cc"] = e.target.value;
+  console.log(formData);
+});
+
+veggieSelect.addEventListener("input", (e) => {
+  console.log("Veggie changed");
+  formData["veggie"] = e.target.value;
+  console.log(formData);
+});
+
+termsCheckbox.addEventListener("input", (e) => {
+  console.log("Checkbox changed");
+  formData["terms"] = e.target.checked;
+  console.log(formData);
+});
