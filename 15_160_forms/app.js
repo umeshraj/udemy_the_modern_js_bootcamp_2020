@@ -15,10 +15,13 @@ form.addEventListener("submit", function (e) {
 
 // live change trackers
 const formData = {};
+
 for (let input of [creditCardInput, termsCheckbox, veggieSelect]) {
-  input.addEventListener("input", (e) => {
+  input.addEventListener("input", ({ target }) => {
     // console.dir(e.target.name);
-    formData[e.target.name] = e.target.value;
+    const { name, type, value, checked } = target;
+    formData[name] = type === "checbox" ? checked : value;
+    console.log(formData);
   });
 }
 // creditCardInput.addEventListener("input", (e) => {
