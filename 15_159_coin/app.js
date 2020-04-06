@@ -15,18 +15,14 @@ const coin = document.querySelector("#coin");
 
 window.addEventListener("keyup", function (e) {
   if (e.key === "ArrowDown") {
-    const currTop = extractPos(avatar.style.top);
-    avatar.style.top = `${currTop + 50}px`;
+    moveVertical(avatar, 50);
   } else if (e.key === "ArrowUp") {
-    const currTop = extractPos(avatar.style.top);
-    avatar.style.top = `${currTop - 50}px`;
+    moveVertical(avatar, -50);
   } else if (e.key === "ArrowLeft") {
-    const currTop = extractPos(avatar.style.left);
-    avatar.style.left = `${currTop - 50}px`;
+    moveHorizontal(avatar, -50);
     avatar.style.transform = "scale(-1, 1)";
   } else if (e.key === "ArrowRight") {
-    const currTop = extractPos(avatar.style.left);
-    avatar.style.left = `${currTop + 50}px`;
+    moveHorizontal(avatar, 50);
     avatar.style.transform = "scale(1, 1)";
   }
 
@@ -34,6 +30,16 @@ window.addEventListener("keyup", function (e) {
     moveCoin();
   }
 });
+
+const moveVertical = (element, amount) => {
+  const currTop = extractPos(element.style.top);
+  element.style.top = `${currTop + amount}px`;
+};
+
+const moveHorizontal = (element, amount) => {
+  const currLeft = extractPos(element.style.left);
+  element.style.left = `${currLeft + amount}px`;
+};
 
 const extractPos = (pos) => {
   if (!pos) {
