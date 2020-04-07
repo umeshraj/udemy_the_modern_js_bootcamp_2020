@@ -17,21 +17,21 @@ const btn = document.querySelector("button");
 // }, 1000);
 
 const moveX = (element, amount, delay, onSuccess, onFailure) => {
-  const bodyBoundary = document.body.clientWidth;
-  const elRight = element.getBoundingClientRect().right;
-  const currentLeft = element.getBoundingClientRect().left;
-  if (elRight + amount > bodyBoundary) {
-    // console.log("Done! CANNOT MOVE THAT FAR");
-    onFailure();
-  } else {
-    setTimeout(() => {
+  setTimeout(() => {
+    const bodyBoundary = document.body.clientWidth;
+    const elRight = element.getBoundingClientRect().right;
+    const currentLeft = element.getBoundingClientRect().left;
+    if (elRight + amount > bodyBoundary) {
+      // console.log("Done! CANNOT MOVE THAT FAR");
+      onFailure();
+    } else {
       element.style.transform = `translateX(${amount + currentLeft}px)`;
       //   if (callback) {
       //     callback();
       //   }
       onSuccess();
-    }, delay);
-  }
+    }
+  }, delay);
 };
 
 // moveX(btn, 100, 1000, () => {
