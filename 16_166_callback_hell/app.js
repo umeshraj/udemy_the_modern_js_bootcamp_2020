@@ -21,15 +21,15 @@ const moveX = (element, amount, delay, callback) => {
   const elRight = element.getBoundingClientRect().right;
   const currentLeft = element.getBoundingClientRect().left;
   if (elRight + amount > bodyBoundary) {
-    console.log("Done!");
+    console.log("Done! CANNOT MOVE THAT FAR");
+  } else {
+    setTimeout(() => {
+      element.style.transform = `translateX(${amount + currentLeft}px)`;
+      if (callback) {
+        callback();
+      }
+    }, delay);
   }
-
-  setTimeout(() => {
-    element.style.transform = `translateX(${amount + currentLeft}px)`;
-    if (callback) {
-      callback();
-    }
-  }, delay);
 };
 
 moveX(btn, 100, 1000, () => {
