@@ -17,9 +17,12 @@ const btn = document.querySelector("button");
 // }, 1000);
 
 const moveX = (element, amount, delay, callback) => {
-  //   const bodyBoundary = document.body.clientWidth;
-  //   const elRight = element.getBoundingClientRect().right;
+  const bodyBoundary = document.body.clientWidth;
+  const elRight = element.getBoundingClientRect().right;
   const currentLeft = element.getBoundingClientRect().left;
+  if (elRight + amount > bodyBoundary) {
+    console.log("Done!");
+  }
 
   setTimeout(() => {
     element.style.transform = `translateX(${amount + currentLeft}px)`;
