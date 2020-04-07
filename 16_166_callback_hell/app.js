@@ -1,3 +1,5 @@
 const btn = document.querySelector("button");
 
-btn.style.transform = `translateX(300px)`;
+setTimeout(() => {
+  btn.style.transform = `translateX(300px)`;
+}, 1000);
