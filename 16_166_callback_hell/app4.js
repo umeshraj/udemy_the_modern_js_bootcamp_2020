@@ -39,15 +39,34 @@ const fakeRequest = (url) => {
 
 fakeRequest("/users")
   .then((res) => {
+    console.log(res);
     const id = res.data[0].id;
-    fakeRequest(`/users/${id}`).then((res) => {
-      console.log(res.data);
-      const postId = res.data.topPostId;
-      fakeRequest(`/posts/${postId}`).then((res) => {
-        console.log(res);
-      });
-    });
+    return fakeRequest(`/users/${id}`);
+  })
+  .then((res) => {
+    console.log(res);
+    const postId = res.data.topPostId;
+    return fakeRequest(`/posts/${postId}`);
+  })
+  .then((res) => {
+    console.log(res);
   })
   .catch((err) => {
     console.log("Oh, no!", err);
   });
+
+// Nested promises
+// fakeRequest("/users")
+//   .then((res) => {
+//     const id = res.data[0].id;
+//     fakeRequest(`/users/${id}`).then((res) => {
+//       console.log(res.data);
+//       const postId = res.data.topPostId;
+//       fakeRequest(`/posts/${postId}`).then((res) => {
+//         console.log(res);
+//       });
+//     });
+//   })
+//   .catch((err) => {
+//     console.log("Oh, no!", err);
+//   });
