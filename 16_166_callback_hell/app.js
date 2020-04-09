@@ -25,7 +25,7 @@ const moveX = (element, amount, delay) => {
       const currentLeft = element.getBoundingClientRect().left;
       if (elRight + amount > bodyBoundary) {
         // console.log("Done! CANNOT MOVE THAT FAR");
-        reject();
+        reject({ bodyBoundary, elRight, amount });
       } else {
         element.style.transform = `translateX(${amount + currentLeft}px)`;
         //   if (callback) {
@@ -41,9 +41,10 @@ const moveX = (element, amount, delay) => {
 moveX(btn, 300, 1000)
   .then(() => moveX(btn, 300, 1000))
   .then(() => moveX(btn, 300, 1000))
-
-  .catch(() => {
-    console.log("Cannot move");
+  .then(() => moveX(btn, 300, 1000))
+  .catch(({ bodyBoundary, elRight, amount }) => {
+    console.log(`Body is ${bodyBoundary}px`);
+    console.log(`Element is at ${elRight}px,${amount}px is too large`);
   });
 
 // full arrow function
