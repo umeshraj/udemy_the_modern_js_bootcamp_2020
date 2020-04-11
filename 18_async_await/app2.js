@@ -8,7 +8,9 @@
 
 // new way with async/await
 async function getData() {
-  const res = await axios.get("https://jsonplaceholder.typicode.com/todos/1");
+  const res = await axios.get("https://jsonplaceholder.typicode.com/todosas/1");
   console.log(res.data);
 }
-getData();
+getData().catch((err) => {
+  console.log("FAILED!" + err);
+});
