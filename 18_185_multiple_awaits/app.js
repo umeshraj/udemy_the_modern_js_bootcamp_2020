@@ -37,15 +37,29 @@ const moveX = (element, amount, delay) => {
   });
 };
 
-// arrow function with implicity return
-moveX(btn, 300, 1000)
-  .then(() => moveX(btn, 300, 1000))
-  .then(() => moveX(btn, 300, 1000))
-  .then(() => moveX(btn, 300, 1000))
-  .catch(({ bodyBoundary, elRight, amount }) => {
-    console.log(`Body is ${bodyBoundary}px`);
-    console.log(`Element is at ${elRight}px,${amount}px is too large`);
-  });
+async function animateRight(el, amt) {
+  await moveX(el, amt, 1000);
+  await moveX(el, amt, 1000);
+  await moveX(el, amt, 1000);
+  await moveX(el, amt, 1000);
+  await moveX(el, amt, 1000);
+  await moveX(el, amt, 1000);
+}
+
+animateRight(btn, 100).catch((err) => {
+  console.log("All done!");
+  animateRight(btn, -100);
+});
+
+// // arrow function with implicity return
+// moveX(btn, 300, 1000)
+//   .then(() => moveX(btn, 300, 1000))
+//   .then(() => moveX(btn, 300, 1000))
+//   .then(() => moveX(btn, 300, 1000))
+//   .catch(({ bodyBoundary, elRight, amount }) => {
+//     console.log(`Body is ${bodyBoundary}px`);
+//     console.log(`Element is at ${elRight}px,${amount}px is too large`);
+//   });
 
 // full arrow function
 // moveX(btn, 300, 1000)
