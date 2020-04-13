@@ -8,9 +8,12 @@ class Color {
   greet() {
     return `Hello from color ${this.name}`;
   }
-  rgb() {
+  innerRGB() {
     const { r, g, b } = this;
-    return `rgb(${r}, ${g}, ${b})`;
+    return `${r}, ${g}, ${b}`;
+  }
+  rgb() {
+    return `rgb(${this.innerRGB()})`;
   }
   hex() {
     const { r, g, b } = this;
@@ -18,7 +21,7 @@ class Color {
   }
   rgba(a = 1.0) {
     const { r, g, b } = this;
-    return `rgba(${r}, ${g}, ${b}, ${a})`;
+    return `rgba(${this.innerRGB()}, ${a})`;
   }
 }
 
@@ -32,3 +35,6 @@ console.log(c2.hex());
 
 // confirm same functions
 console.log(c1.hex === c2.hex);
+
+// change document color
+document.body.style.backgroundColor = c1.rgba(0.4);
