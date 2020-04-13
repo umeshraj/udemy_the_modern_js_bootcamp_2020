@@ -1,4 +1,4 @@
-class Cat {
+class Pet {
   constructor(name, age) {
     this.name = name;
     this.age = age;
@@ -7,22 +7,15 @@ class Cat {
   eat() {
     return `${this.name} is eating`;
   }
+}
 
+class Cat extends Pet {
   meow() {
     return `${this.name} says meow`;
   }
 }
 
-class Dog {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-
-  eat() {
-    return `${this.name} is eating`;
-  }
-
+class Dog extends Pet {
   woof() {
     return `${this.name} says woof`;
   }
