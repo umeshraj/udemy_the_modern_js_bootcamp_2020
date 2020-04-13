@@ -19,6 +19,10 @@ class Dog extends Pet {
   woof() {
     return `${this.name} says woof`;
   }
+
+  eat() {
+    return `${this.name} scarfs his food!`;
+  }
 }
 
 const monty = new Cat("Monty", 9);
