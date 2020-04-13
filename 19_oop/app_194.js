@@ -1,5 +1,6 @@
 class Pet {
   constructor(name, age) {
+    console.log("In Pet constructor");
     this.name = name;
     this.age = age;
   }
@@ -10,6 +11,11 @@ class Pet {
 }
 
 class Cat extends Pet {
+  constructor(name, age, livesLeft = 9) {
+    console.log("In Cat constructor");
+    super(name, age);
+    this.livesLeft = livesLeft;
+  }
   meow() {
     return `${this.name} says meow`;
   }
