@@ -4,12 +4,21 @@ class Timer {
     this.startButton = startButton;
     this.pauseButton = pauseButton;
 
+    // option a
     this.startButton.addEventListener("click", this.start);
+    // option b
+    // this.startButton.addEventListener("click", this.start.bind(this));
   }
 
-  start() {
+  //   option A
+  start = () => {
     console.log(this);
-  }
+  };
+
+  //   //   option B
+  //   start() {
+  //     console.log(this);
+  //   }
 }
 
 // Select DOM elements
