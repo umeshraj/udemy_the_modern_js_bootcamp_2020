@@ -27,8 +27,7 @@ class Timer {
   };
 
   tick = () => {
-    const timeRemaining = this.timeRemaining;
-    this.timeRemaining = timeRemaining - 1;
+    this.timeRemaining = this.timeRemaining - 1;
   };
 
   get timeRemaining() {
