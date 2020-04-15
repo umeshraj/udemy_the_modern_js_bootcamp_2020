@@ -8,18 +8,23 @@ class Timer {
     this.startButton.addEventListener("click", this.start);
     // option b
     // this.startButton.addEventListener("click", this.start.bind(this));
+    this.pauseButton.addEventListener("click", this.pause);
   }
 
   //   option A
   start = () => {
     this.tick(); // to start immediately when start is pressed
-    setInterval(this.tick, 1000);
+    this.interval = setInterval(this.tick, 1000);
   };
 
   //   //   option B
   //   start() {
   //     console.log(this);
   //   }
+
+  pause = () => {
+    clearInterval(this.interval);
+  };
 
   tick = () => {
     console.log("tick");
