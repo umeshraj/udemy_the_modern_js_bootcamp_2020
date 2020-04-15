@@ -12,13 +12,18 @@ class Timer {
 
   //   option A
   start = () => {
-    console.log(this);
+    this.tick(); // to start immediately when start is pressed
+    setInterval(this.tick, 1000);
   };
 
   //   //   option B
   //   start() {
   //     console.log(this);
   //   }
+
+  tick = () => {
+    console.log("tick");
+  };
 }
 
 // Select DOM elements
