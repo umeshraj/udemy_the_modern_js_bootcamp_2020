@@ -3,6 +3,7 @@ const durationInput = document.querySelector("#duration");
 const startButton = document.querySelector("#start");
 const pauseButton = document.querySelector("#pause");
 const circle = document.querySelector("circle");
+const tickDuration = 50;
 
 const perimeter = parseFloat(circle.getAttribute("r")) * 2 * Math.PI;
 circle.setAttribute("stroke-dasharray", perimeter);
@@ -16,7 +17,7 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
   },
   onTick() {
     circle.setAttribute("stroke-dashoffset", currentOffset);
-    currentOffset -= 10;
+    currentOffset -= 1;
   },
   onComplete() {
     console.log("Timer is done");
