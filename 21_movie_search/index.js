@@ -6,6 +6,11 @@ const fetchData = async (searchTerm) => {
     },
   });
   // console.log(response.data);
+
+  // handle cases with no result found
+  if (response.data.Error) {
+    return [];
+  }
   return response.data.Search;
 };
 
