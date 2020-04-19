@@ -32,6 +32,8 @@ const resultsWrapper = document.querySelector(".results");
 const onInput = async (event) => {
   const movies = await fetchData(event.target.value);
   // console.log(movies);
+  // clear existing dropdown
+  resultsWrapper.innerHTML = "";
   dropdown.classList.add("is-active");
   for (let movie of movies) {
     const option = document.createElement("a");
