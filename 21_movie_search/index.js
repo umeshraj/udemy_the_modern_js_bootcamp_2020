@@ -1,19 +1,4 @@
-// on movie select
-const onMovieSelect = async (movie) => {
-  const response = await axios.get("http://www.omdbapi.com/", {
-    params: {
-      apikey: apikey,
-      i: movie.imdbID,
-    },
-  });
-  // console.log(response.data);
-  document.querySelector("#summary").innerHTML = movieTemplate(response.data);
-};
-
-// create first search
-createAutoComplete({
-  root: document.querySelector(".autocomplete"),
-
+const autoCompleteConfig = {
   renderOption(movie) {
     // check if image src is n/a
     const imgSrc = movie.Poster === "N/A" ? "" : movie.Poster;
@@ -46,7 +31,31 @@ createAutoComplete({
     }
     return response.data.Search;
   },
+};
+
+// create left search
+createAutoComplete({
+  ...autoCompleteConfig,
+  root: document.querySelector(".left-autocomplete"),
 });
+
+// create right search
+createAutoComplete({
+  ...autoCompleteConfig,
+  root: document.querySelector(".right-autocomplete"),
+});
+
+// on movie select
+const onMovieSelect = async (movie) => {
+  const response = await axios.get("http://www.omdbapi.com/", {
+    params: {
+      apikey: apikey,
+      i: movie.imdbID,
+    },
+  });
+  // console.log(response.data);
+  document.querySelector("#summary").innerHTML = movieTemplate(response.data);
+};
 
 const movieTemplate = (movieDetail) => {
   return `
