@@ -29,14 +29,14 @@ const onMovieSelect = async (movie) => {
 // create first search
 createAutoComplete({
   root: document.querySelector(".autocomplete"),
-});
-// create second search
-createAutoComplete({
-  root: document.querySelector(".autocomplete-two"),
-});
-// create third search
-createAutoComplete({
-  root: document.querySelector(".autocomplete-three"),
+  renderOption(movie) {
+    // check if image src is n/a
+    const imgSrc = movie.Poster === "N/A" ? "" : movie.Poster;
+    return `
+    <img src="${imgSrc}"/>
+    ${movie.Title} (${movie.Year})
+  `;
+  },
 });
 
 const movieTemplate = (movieDetail) => {
