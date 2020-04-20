@@ -1,4 +1,9 @@
-const createAutoComplete = ({ root, renderOption }) => {
+const createAutoComplete = ({
+  root,
+  renderOption,
+  onOptionSelect,
+  inputValue,
+}) => {
   root.innerHTML = `
   <label><b>Search for a movie</b></label>
   <input class="input" />
@@ -34,8 +39,8 @@ const createAutoComplete = ({ root, renderOption }) => {
       // handle click on option
       option.addEventListener("click", () => {
         dropdown.classList.remove("is-active");
-        input.value = movie.Title;
-        onMovieSelect(movie);
+        input.value = inputValue(movie);
+        onOptionSelect(movie);
       });
       resultsWrapper.appendChild(option);
     }

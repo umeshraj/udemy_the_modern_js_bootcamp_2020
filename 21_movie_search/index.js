@@ -29,6 +29,7 @@ const onMovieSelect = async (movie) => {
 // create first search
 createAutoComplete({
   root: document.querySelector(".autocomplete"),
+
   renderOption(movie) {
     // check if image src is n/a
     const imgSrc = movie.Poster === "N/A" ? "" : movie.Poster;
@@ -36,6 +37,14 @@ createAutoComplete({
     <img src="${imgSrc}"/>
     ${movie.Title} (${movie.Year})
   `;
+  },
+
+  onOptionSelect(movie) {
+    onMovieSelect(movie);
+  },
+
+  inputValue(movie) {
+    return movie.Title;
   },
 });
 
