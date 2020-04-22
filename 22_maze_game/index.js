@@ -1,5 +1,6 @@
 const { Engine, Render, Runner, World, Bodies } = Matter;
 
+const cells = 3;
 const width = 600;
 const height = 600;
 
@@ -38,20 +39,31 @@ World.add(world, walls);
 // }
 
 // new way
-const grid = Array(3)
+const grid = Array(cells)
   .fill(null)
-  .map(() => Array(3).fill(false));
+  .map(() => Array(cells).fill(false));
 // console.log(grid);
 
 // vertical
-const verticals = Array(3)
+const verticals = Array(cells)
   .fill(null)
-  .map(() => Array(2).fill(false));
+  .map(() => Array(cells - 1).fill(false));
 
 // horizontals
-const horizontals = Array(2)
+const horizontals = Array(cells - 1)
   .fill(null)
-  .map(() => Array(3).fill(false));
+  .map(() => Array(cells).fill(false));
 
-console.log(verticals);
-console.log(horizontals);
+// console.log(verticals);
+// console.log(horizontals);
+
+const startRow = Math.floor(Math.random() * cells);
+const startCol = Math.floor(Math.random() * cells);
+// console.log(startRow, startCol);
+
+const stepThroughCell = (row, column) => {
+  // if I have visited cell at [row, column] then return
+  // Mark this cell as being visited
+};
+
+stepThroughCell(startRow, startCol);
