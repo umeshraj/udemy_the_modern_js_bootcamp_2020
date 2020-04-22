@@ -41,4 +41,17 @@ World.add(world, walls);
 const grid = Array(3)
   .fill(null)
   .map(() => Array(3).fill(false));
-console.log(grid);
+// console.log(grid);
+
+// vertical
+const verticals = Array(3)
+  .fill(null)
+  .map(() => Array(2).fill(false));
+
+// horizontals
+const horizontals = Array(2)
+  .fill(null)
+  .map(() => Array(3).fill(false));
+
+console.log(verticals);
+console.log(horizontals);
