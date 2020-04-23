@@ -1,8 +1,8 @@
 const { Engine, Render, Runner, World, Bodies } = Matter;
 
 const cells = 3;
-const width = 600;
-const height = 600;
+const width = 300;
+const height = 300;
 
 const unitLength = width / cells;
 
@@ -120,7 +120,7 @@ const stepThroughCell = (row, column) => {
   // visit that next cell
 };
 
-stepThroughCell(startRow, startCol);
+// stepThroughCell(startRow, startCol);
 
 horizontals.forEach((row, rowIndex) => {
   row.forEach((open, columnIndex) => {
@@ -130,7 +130,7 @@ horizontals.forEach((row, rowIndex) => {
 
     const wall = Bodies.rectangle(
       columnIndex * unitLength + unitLength / 2,
-      rowIndex * unitLength + unitLength / 2,
+      rowIndex * unitLength + unitLength,
       unitLength,
       10,
       {
