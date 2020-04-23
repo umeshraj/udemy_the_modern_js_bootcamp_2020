@@ -4,6 +4,8 @@ const cells = 3;
 const width = 600;
 const height = 600;
 
+const unitLength = width / cells;
+
 const engine = Engine.create();
 const { world } = engine;
 const render = Render.create({
@@ -54,7 +56,6 @@ const shuffle = (arr) => {
 const grid = Array(cells)
   .fill(null)
   .map(() => Array(cells).fill(false));
-// console.log(grid);
 
 // vertical
 const verticals = Array(cells)
@@ -66,12 +67,8 @@ const horizontals = Array(cells - 1)
   .fill(null)
   .map(() => Array(cells).fill(false));
 
-// console.log(verticals);
-// console.log(horizontals);
-
 const startRow = Math.floor(Math.random() * cells);
 const startCol = Math.floor(Math.random() * cells);
-// console.log(startRow, startCol);
 
 const stepThroughCell = (row, column) => {
   // if I have visited cell at [row, column] then return
@@ -88,7 +85,7 @@ const stepThroughCell = (row, column) => {
     [row + 1, column, "down"],
     [row, column - 1, "left"],
   ]);
-  console.log(neighbors);
+
   // For each neighbor...
   for (let neighbor of neighbors) {
     const [nextRow, nextColumn, direction] = neighbor;
@@ -116,11 +113,30 @@ const stepThroughCell = (row, column) => {
     } else if (direction == "down") {
       horizontals[row][column] = true;
     }
+
+    stepThroughCell(nextRow, nextColumn);
   }
 
   // visit that next cell
 };
 
 stepThroughCell(startRow, startCol);
-console.log(startRow, startCol);
-// console.log(grid);
+
+horizontals.forEach((row, rowIndex) => {
+  row.forEach((open, columnIndex) => {
+    if (open == true) {
+      return;
+    }
+
+    const wall = Bodies.rectangle(
+      columnIndex * unitLength + unitLength / 2,
+      rowIndex * unitLength + unitLength / 2,
+      unitLength,
+      10,
+      {
+        isStatic: true,
+      }
+    );
+    World.add(world, wall);
+  });
+});
