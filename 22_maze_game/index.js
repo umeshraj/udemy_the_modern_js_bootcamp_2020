@@ -120,7 +120,7 @@ const stepThroughCell = (row, column) => {
   // visit that next cell
 };
 
-// stepThroughCell(startRow, startCol);
+stepThroughCell(startRow, startCol);
 
 horizontals.forEach((row, rowIndex) => {
   row.forEach((open, columnIndex) => {
@@ -173,3 +173,19 @@ World.add(world, goal);
 // ball
 const ball = Bodies.circle(unitLength / 2, unitLength / 2, unitLength / 3);
 World.add(world, ball);
+
+// move ball
+document.addEventListener("keydown", (event) => {
+  if (event.keyCode === 87) {
+    console.log("move up");
+  }
+  if (event.keyCode === 68) {
+    console.log("move right");
+  }
+  if (event.keyCode === 83) {
+    console.log("move down");
+  }
+  if (event.keyCode === 65) {
+    console.log("move left");
+  }
+});
