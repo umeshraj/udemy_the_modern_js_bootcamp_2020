@@ -4,4 +4,8 @@
 
 // console.log(arguments);
 // console.log(require);
-console.log(__filename);
+// console.log(__filename);
+
+// require cache
+require("./myscript.js");
+console.log(require.cache);
