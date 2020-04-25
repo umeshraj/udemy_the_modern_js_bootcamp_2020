@@ -1,3 +1,6 @@
+const { hash } = window.location;
+console.log(hash.replace("#", ""));
+
 document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
 
