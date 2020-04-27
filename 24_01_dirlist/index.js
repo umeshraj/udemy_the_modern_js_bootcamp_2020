@@ -9,7 +9,9 @@ const chalk = require("chalk");
 // const lstat = fs.promises.lstat;
 const { lstat } = fs.promises;
 
-fs.readdir(process.cwd(), async (err, filenames) => {
+const targetDir = process.argv[2] || process.cwd();
+
+fs.readdir(targetDir, async (err, filenames) => {
   // err is null or an object
   if (err) {
     // error handling
