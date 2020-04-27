@@ -8,12 +8,21 @@ const util = require("util");
 // const lstat = fs.promises.lstat;
 const { lstat } = fs.promises;
 
-fs.readdir(process.cwd(), (err, filenames) => {
+fs.readdir(process.cwd(), async (err, filenames) => {
   // err is null or an object
   if (err) {
     // error handling
     console.log(err);
     return;
+  }
+
+  for (let filename of filenames) {
+    try {
+      const stats = await lstat(filename);
+      console.log(filename, stats.isFile());
+    } catch (err) {
+      console.log(err);
+    }
   }
 });
 
