@@ -1,18 +1,28 @@
 #!usr/bin/env node
 
 const debounce = require("lodash.debounce");
-chokidar = require("chokidar");
+const chokidar = require("chokidar");
+const program = require("caporal");
 
-const start = debounce(() => {
-  console.log("Starting user program");
-}, 100);
-
-chokidar
-  .watch(".")
-  .on("add", start)
-  .on("change", () => {
-    console.log("File changed");
-  })
-  .on("unlink", () => {
-    console.log("File unliked");
+program
+  .version("0.0.1")
+  .argument("[filename]", "Name of file to execute")
+  .action((args) => {
+    console.log(args);
   });
+
+program.parse(process.argv);
+
+// const start = debounce(() => {
+//   console.log("Starting user program");
+// }, 100);
+
+// chokidar
+//   .watch(".")
+//   .on("add", start)
+//   .on("change", () => {
+//     console.log("File changed");
+//   })
+//   .on("unlink", () => {
+//     console.log("File unliked");
+//   });
