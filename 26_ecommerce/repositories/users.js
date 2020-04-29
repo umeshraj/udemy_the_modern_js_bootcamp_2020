@@ -24,13 +24,18 @@ class UserRepository {
 
     // read content
     console.log(contents);
+
+    // parse content
+    const data = JSON.parse(contents);
+    return data;
   }
 }
 
 // testing
 const test = async () => {
   const repo = new UserRepository("users.json");
-  await repo.getAll();
+  const users = await repo.getAll();
+  console.log(users);
 };
 
 test();
