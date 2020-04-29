@@ -18,16 +18,11 @@ class UserRepository {
   //   get all users
   async getAll() {
     //   open file
-    const contents = await fs.promises.readFile(this.filename, {
-      encoding: "utf8",
-    });
-
-    // read content
-    console.log(contents);
-
-    // parse content
-    const data = JSON.parse(contents);
-    return data;
+    return JSON.parse(
+      await fs.promises.readFile(this.filename, {
+        encoding: "utf8",
+      })
+    );
   }
 }
 
