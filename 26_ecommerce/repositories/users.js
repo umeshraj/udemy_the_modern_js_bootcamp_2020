@@ -31,7 +31,15 @@ class UserRepository {
     console.log(records);
     records.push(attrs);
     // write back to file
-    await fs.promises.writeFile(this.filename, JSON.stringify(records));
+    await this.writeAll(records);
+  }
+
+  // write util
+  async writeAll(records) {
+    await fs.promises.writeFile(
+      this.filename,
+      JSON.stringify(records, null, 2)
+    );
   }
 }
 
