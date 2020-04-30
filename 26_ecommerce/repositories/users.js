@@ -59,6 +59,16 @@ class UserRepository {
     const filteredRecords = records.filter((record) => record.id !== id);
     await this.writeAll(filteredRecords);
   }
+
+  async update(id, attrs) {
+    const records = await this.getAll();
+    const record = records.find((record) => record.id === id);
+    if (!record) {
+      throw new Error(`Record with ${id} not found`);
+    }
+    Object.assign(record, attrs);
+    await this.writeAll(records);
+  }
 }
 
 // testing
@@ -69,7 +79,11 @@ const test = async () => {
   const user = await repo.getOne("1cd3ba17");
   console.log(user);
   // delete
-  await repo.delete("8d976ebd");
+  // await repo.delete("8d976ebd");
+
+  // update
+  // repo.update("1cd3ba17", { address: "home" });
+  // repo.update("123", { address: "home" });
 };
 
 test();
