@@ -88,27 +88,29 @@ class UserRepository {
   }
 }
 
-// testing
-const test = async () => {
-  const repo = new UserRepository("users.json");
-  // await repo.create({ email: "test@test.com", password: "password" });
-  // const users = await repo.getAll();
-  // const user = await repo.getOne("1cd3ba17");
-  // delete
-  // await repo.delete("8d976ebd");
+module.exports = new UserRepository("users.json");
 
-  // update
-  // repo.update("1cd3ba17", { address: "home" });
-  // repo.update("123", { address: "home" });
+// // testing
+// const test = async () => {
+//   const repo = new UserRepository("users.json");
+//   // await repo.create({ email: "test@test.com", password: "password" });
+//   // const users = await repo.getAll();
+//   // const user = await repo.getOne("1cd3ba17");
+//   // delete
+//   // await repo.delete("8d976ebd");
 
-  // get one by
-  const user = await repo.getOneBy({
-    email: "test@test.com",
-    password: "password123",
-    id: "1cd3ba17",
-  });
+//   // update
+//   // repo.update("1cd3ba17", { address: "home" });
+//   // repo.update("123", { address: "home" });
 
-  console.log(user);
-};
+//   // get one by
+//   const user = await repo.getOneBy({
+//     email: "test@test.com",
+//     password: "password123",
+//     id: "1cd3ba17",
+//   });
 
-test();
+//   console.log(user);
+// };
+
+// test();
