@@ -34,6 +34,8 @@ class UserRepository {
     records.push(attrs);
     // write back to file
     await this.writeAll(records);
+
+    return attrs;
   }
 
   // write util

@@ -36,6 +36,11 @@ app.post("/", async (req, res) => {
     return res.send("Password mismatch");
   }
 
+  // create user in repo
+  const user = await usersRepo.create({ email: email, password: password });
+
+  // store user id inside user's cookie
+
   res.send("Account created!!");
 });
 
