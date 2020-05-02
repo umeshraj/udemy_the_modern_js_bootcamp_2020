@@ -108,8 +108,8 @@ class UserRepository {
     // const hashed = result[0];
     // const salt = result[1];
     const [hashed, salt] = saved.split(".");
-    const hashedSupplied = await scrypt(supplied, salt, 64);
-    return hashed === hashedSupplied;
+    const hashedSuppliedBuf = await scrypt(supplied, salt, 64);
+    return hashed === hashedSuppliedBuf.toString("hex");
   }
 }
 
