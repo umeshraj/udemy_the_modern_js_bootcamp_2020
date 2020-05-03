@@ -23,7 +23,11 @@ router.post(
     // get access to email, password etc
     // console.log(req.body);
     const errors = validationResult(req);
-    console.log(errors);
+
+    if (!errors.isEmpty()) {
+      return res.send(signupTemplate({ req: req, errors: errors }));
+    }
+
     const { email, password, passwordConfirmation } = req.body;
 
     // create user in repo
