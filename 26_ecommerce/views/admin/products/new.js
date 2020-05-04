@@ -10,7 +10,6 @@ module.exports = ({ errors }) => {
     <input type="file" name="image" id="" />
     <button>Submit</button>
   </form>
-  
     `,
   });
 };
