@@ -39,7 +39,7 @@ it("Dropdown starts closed!", () => {
 });
 
 it("After searching, dropdown opens up", async () => {
-  const input = document.querySelector("#target");
+  const input = document.querySelector("input");
   input.value = "avengers";
   input.dispatchEvent(new Event("input"));
 
