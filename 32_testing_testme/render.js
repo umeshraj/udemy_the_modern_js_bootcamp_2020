@@ -9,6 +9,12 @@ const render = async (filename) => {
     resources: "usable",
   });
 
+  return new Promise((resolve, reject) => {
+    dom.window.document.addEventListener("DOMContentLoaded", () => {
+      resolve(dom);
+    });
+  });
+
   return dom;
 };
 
